@@ -5,5 +5,5 @@ from django.http import HttpResponse
 def get_grading_parameters(request):
     return HttpResponse("Welcome to Django")
 
-def index():
+def index(request):
     return HttpResponse("welcome to my homepage")
