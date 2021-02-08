@@ -28,7 +28,7 @@ class ScrumyHistory(models.Model):
     goal = models.ForeignKey(ScrumyGoals, null=True, on_delete=models.SET_NULL)
     moved_by = models.CharField(max_length=200)
     created_by = models.CharField(max_length=200)
-    moved_fro = models.CharField(max_length=200)
+    moved_from = models.CharField(max_length=200)
     moved_to = models.CharField(max_length=200)
     time_of_action = models.CharField(max_length=200)
 
