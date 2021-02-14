@@ -1,7 +1,18 @@
 from django.db import models
 from django.contrib.auth.models import User
+import random
+
 
 # Create your models here.
+
+
+def id():
+    random_num = random.randint(1000, 9999)
+    goal = ScrumyGoals.objects.filter(goal_id=random_num)
+
+    while True:
+        continue
+    return 
 
  
 class GoalStatus(models.Model):
