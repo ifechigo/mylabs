@@ -24,8 +24,15 @@ def move_goal(request, goal_id):
     return HttpResponse(goal)
 
 def add_goal(request):
-    first = ScrumyGoals.objects.create(goal_name = 'Keep learning Django', goal_id= random.randrange(1000,9999,2) , created_by= 'louis', moved_by='louis', owner= 'louis', goal_status= GoalStatus.objects.get(status_name = 'Weekly Goal'), user=User.objects.get(username = 'louis'))
-    first.save()
+    random_num = random.randint(1000, 9999)
+
+    if GoalStatus.objects.get(goal_id=random_num):
+        print('goal_id exists')
+
+    else:
+        first = ScrumyGoals.objects.create(goal_name = 'Keep learning Django', goal_id= random.randrange(1000,9999,2) , created_by= 'louis', moved_by='louis', owner= 'louis', goal_status= GoalStatus.objects.get(status_name = 'Weekly Goal'), user=User.objects.get(username = 'louis'))
+        first.save()
+    
     return HttpResponse (first)
 
 def home(request):
